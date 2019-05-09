@@ -52,13 +52,4 @@ html {
   color: #fff;
   background-color: #35495e;
 }
-
-.nav {
-  margin-top: 2em;
-}
-
-.nav-links {
-  margin-right: 1em;
-}
-
 </style>

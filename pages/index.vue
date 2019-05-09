@@ -67,11 +67,13 @@ nav {
 
 .nav {
   font-size: 1.25em;
+  margin-top: 2em;
   text-align: right;
 }
 
 .navLink {
   color: #526488;
+  margin-right: 1em;
 }
 
 .title {
