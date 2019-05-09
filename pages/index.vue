@@ -14,7 +14,7 @@
           Collin Messer
         </h1>
         <h2 class="subtitle">
-          I am a husband, father, developer, blogger, problem solver, internet maker, human being. I love to build the internet, help people, and strive for 💯
+          I am a Christ follower, husband, father, developer, blogger, problem solver, internet maker, human being. I love to build the internet, help people, and strive for 💯
         </h2>
         <div class="links">
           <a
