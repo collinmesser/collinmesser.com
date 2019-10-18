@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="EN">
+
+<head>
+  <meta charset="utf-8">
+  <title>💯Collin Messer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="index.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+    </label>
+    <em>Enable Dark Mode!</em>
+  </div>
+  <nav>
+    <a href="https://github.com/collinmesser/" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/collinmesser/" target="_blank">LinkedIn</a>
+    <a href="https://twitter.com/collinmesser" target="_blank">Twitter</a>
+    <a href="mailto:collin@collinmesser.com" target="_blank">Contact</a>
+  </nav>
+  <section class="container">
+    <div>
+      <h1 class="title">
+        Collin Messer
+      </h1>
+      <h2 class="subtitle">
+        I am a Christ follower, husband, father, developer, blogger, problem solver, internet maker, human being. My
+        favorite thing build the internet, help people, and strive for 💯
+      </h2>
+      <div class="links">
+        <a href="https://healthx.com/" target="_blank" class="hx__logo">
+          <img src="img/HX_logo-white.png" alt="Healthx Logo">
+        </a>
+        <a href="https://esfiddle.netlify.com" target="_blank" class="esfiddle__logo">
+          <img src="img/esfiddle-logo.png" alt="ESFiddle Logo">
+        </a>
+        <a href="https://fiadventures.com" target="_blank" class="fiad__logo">
+          <img src="img/FIAD-logo.png" alt="FI Adventures Logo">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start of HubSpot Embed Code -->
+  <script id="hs-script-loader" type="text/javascript" async defer src="//js.hs-scripts.com/5969604.js"></script>
+  <!-- End of HubSpot Embed Code -->
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- <script>
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('set', 'transport', 'beacon');
+    ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
+  <script type="text/javascript">
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+</body>
+
+</html>
