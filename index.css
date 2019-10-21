@@ -12,20 +12,21 @@
    ========================================================================== */
 
 :root {
-  --primary-color: #bd93f9;
-  --secondary-color: #6272a4;
-  --font-color: #424242;
-  --bg-color: #f8f8f2;
-  --heading-color: #292922;
+  --primary-color: #F6CF53;
+  --secondary-color: #565D36;
+  --font-color: #212625;
+  --bg-color: #EFEFE8;
+  --heading-color: #212625;
 }
 
 [data-theme="dark"] {
-  --primary-color: #ff79c6;
-  --secondary-color: #50fa7b;
-  --font-color: #f8f8f2;
-  --bg-color: #282a36;
-  --heading-color: #818cab;
+  --primary-color: #F6CF53;
+  --secondary-color: #C44C32;
+  --font-color: #EFEFE8;
+  --bg-color: #212625;
+  --heading-color: #212625;
 }
+
 
 html {
   background: var(--bg-color);
@@ -52,12 +53,14 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #C44C32;
+  color: var(--font-color);
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: #C44C32;
+  color: var(--font-color);
   text-shadow: none;
 }
 
@@ -121,6 +124,17 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+a {
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--primary-color);
+  text-decoration: none;
+}
+
+a:not([class]):hover {
+  background: var(--primary-color);
+  color: #212625;
+  text-shadow: none;
+}
 
 nav {
   font-size: 1.25em;
@@ -130,8 +144,10 @@ nav {
 }
 
 nav a {
-  color: var(--font-color);
+  color: var(--secondary-color);
+  border-bottom: 1px solid var(--primary-color);
   margin-right: 1em;
+  text-decoration: none;
 }
 
 section {
@@ -147,15 +163,21 @@ section {
 .title {
   color: var(--heading-color);
   display: block;
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   font-size: 3em;
   font-weight: 300;
+  margin-bottom: 2em;
+}
+
+.title span {
+  background: var(--primary-color);
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 2em;
   color: var(--font-color);
+  font-size: 2em;
+  font-weight: 300;
+  margin-bottom: 2em;
   padding-bottom: 15px;
 }
 
@@ -168,6 +190,7 @@ section {
 }
 
 .links a {
+  border-bottom: none;
   margin-bottom: 40px;
 }
 
@@ -222,7 +245,7 @@ section {
 }
 
 .slider {
-  background-color: #ccc;
+  background-color: var(--secondary-color);
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -244,7 +267,7 @@ section {
 }
 
 input:checked+.slider {
-  background-color: #50fa7b;
+  background-color: var(--secondary-color);
 }
 
 input:checked+.slider:before {
@@ -261,92 +284,7 @@ input:checked+.slider:before {
 
 
 /* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden {
-  display: none !important;
-}
-
-/*
-* Hide only visually, but have it available for screen readers:
-* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-*
-* 1. For long content, line feeds are not interpreted as spaces and small width
-*    causes content to wrap 1 word per line:
-*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-*/
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-/*
-* Extends the .sr-only class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-/*
-* Hide visually and from screen readers, but maintain layout
-*/
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
-* Clearfix: contain floats
-*
-* For modern browsers
-* 1. The space content is one way to avoid an Opera bug when the
-*    `contenteditable` attribute is included anywhere else in the document.
-*    Otherwise it causes space to appear at the top and bottom of elements
-*    that receive the `clearfix` class.
-* 2. The use of `table` rather than `block` is only necessary if using
-*    `:before` to contain the top-margins of child elements.
-*/
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
+   Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
@@ -357,13 +295,6 @@ input:checked+.slider:before {
   nav {
     width: 90%;
   }
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -419,15 +350,6 @@ input:checked+.slider:before {
     page-break-inside: avoid;
   }
 
-  /*
-     * Printing Tables:
-     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
   img {
     page-break-inside: avoid;
   }
