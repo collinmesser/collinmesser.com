@@ -11,8 +11,8 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="preload" as="style" media="all" onload="this.onload=null;this.rel='stylesheet'" href="normalize.css">
+  <link rel="preload" as="style" media="all" onload="this.onload=null;this.rel='stylesheet'" href="index.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -47,13 +47,22 @@
       </h2>
       <div class="links">
         <a href="https://healthx.com/" target="_blank" class="hx__logo">
-          <img src="img/HX_logo-white.png" alt="Healthx Logo">
+          <picture>
+            <source srcset="img/HX_logo-white.jp2" type="image/jp2">
+            <img src="img/HX_logo-white.png" alt="Healthx Logo">
+          </picture>
         </a>
         <a href="https://esfiddle.netlify.com" target="_blank" class="esfiddle__logo">
-          <img src="img/esfiddle-logo.png" alt="ESFiddle Logo">
+          <picture>
+            <source srcset="img/esfiddle-logo.jp2" type="image/jp2">
+            <img src="img/esfiddle-logo.png" alt="ESFiddle Logo">
+          </picture>
         </a>
         <a href="https://fiadventures.com" target="_blank" class="fiad__logo">
-          <img src="img/FIAD-logo.png" alt="FI Adventures Logo">
+          <picture>
+            <source srcset="img/FIAD-logo.jp2" type="image/jp2">
+            <img src="img/FIAD-logo.png" alt="FI Adventure Logo">
+          </picture>
         </a>
       </div>
     </div>
