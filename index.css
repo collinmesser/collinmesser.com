@@ -12,28 +12,28 @@
    ========================================================================== */
 
 :root {
-  --primary-color: #F6CF53;
-  --secondary-color: #565D36;
+  --primary-color: #f6cf53;
+  --secondary-color: #565d36;
   --font-color: #212625;
-  --bg-color: #EFEFE8;
+  --bg-color: #efefe8;
   --heading-color: #212625;
 }
 
 [data-theme="dark"] {
-  --primary-color: #F6CF53;
-  --secondary-color: #C44C32;
-  --font-color: #EFEFE8;
+  --primary-color: #f6cf53;
+  --secondary-color: #c44c32;
+  --font-color: #efefe8;
   --bg-color: #212625;
   --heading-color: #212625;
 }
-
 
 html {
   background: var(--bg-color);
   box-sizing: border-box;
   color: var(--font-color);
   font-size: 1em;
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
   line-height: 1.4;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -53,13 +53,13 @@ html {
  */
 
 ::-moz-selection {
-  background: #C44C32;
+  background: #c44c32;
   color: var(--font-color);
   text-shadow: none;
 }
 
 ::selection {
-  background: #C44C32;
+  background: #c44c32;
   color: var(--font-color);
   text-shadow: none;
 }
@@ -122,7 +122,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   custom styles
    ========================================================================== */
 a {
   color: var(--secondary-color);
@@ -151,10 +151,11 @@ nav a {
 }
 
 section {
-  margin: 5em auto 0;
+  margin: 2em auto 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
   width: 90%;
@@ -163,58 +164,77 @@ section {
 .title {
   color: var(--heading-color);
   display: block;
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, Arial,
+    sans-serif;
   font-size: 3em;
   font-weight: 300;
   margin-bottom: 2em;
+  width: 100%;
 }
 
 .title span {
   background: var(--primary-color);
 }
 
-.subtitle {
+main {
+  align-self: flex-start;
   color: var(--font-color);
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 300;
-  margin-bottom: 2em;
-  padding-bottom: 15px;
+  margin-bottom: 2.5em;
+  padding-bottom: 1em;
+  text-align: left;
+  max-width: 50%;
 }
 
-.links {
+aside {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+aside a {
+  font-size: 1.25em;
+  margin: 2em 0;
+}
+
+.image-links {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 3em;
-  padding-top: 15px;
+  padding-top: 1em;
+  width: 100%;
 }
 
-.links a {
+.image-links a {
   border-bottom: none;
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 
 .esfiddle__logo {
   background: #3b3b3b;
-  height: 240px;
-  width: 360px;
+  height: 180px;
+  width: 270px;
 }
 
 .esfiddle__logo img {
-  height: 240px;
+  height: 180px;
 }
 
 .fiad__logo img {
-  height: 240px;
-  width: 360px;
+  height: 180px;
+  width: 270px;
 }
 
 .hx__logo {
   align-items: center;
   background-color: #1b7ffc;
   display: flex;
-  height: 240px;
-  width: 360px;
+  height: 180px;
+  width: 270px;
 }
 
 .hx__logo img {
@@ -235,9 +255,9 @@ section {
 
 .theme-switch {
   display: inline-block;
-  height: 34px;
+  height: 2.125em;
   position: relative;
-  width: 60px;
+  width: 3.75em;
 }
 
 .theme-switch input {
@@ -251,8 +271,8 @@ section {
   left: 0;
   position: absolute;
   right: 0;
-  top: 0;
-  transition: .4s;
+  top: 1px;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -262,15 +282,15 @@ section {
   height: 26px;
   left: 4px;
   position: absolute;
-  transition: .4s;
+  transition: 0.4s;
   width: 26px;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: var(--secondary-color);
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(26px);
 }
 
@@ -281,7 +301,6 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
 
 /* ==========================================================================
    Media Queries
@@ -304,7 +323,6 @@ input:checked+.slider:before {
    ========================================================================== */
 
 @media print {
-
   *,
   *:before,
   *:after {
@@ -324,11 +342,11 @@ input:checked+.slider:before {
   }
 
   a[href]:after {
-    content: " ("attr(href) ")";
+    content: " (" attr(href) ")";
   }
 
   abbr[title]:after {
-    content: " ("attr(title) ")";
+    content: " (" attr(title) ")";
   }
 
   /*
